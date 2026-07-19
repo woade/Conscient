@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CONSCIENT — About the Brand</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:rgba(0,0,0,.81);
+  --ink-solid:#0a0a0a;
+  --muted:rgba(0,0,0,.5);
+  --dim:rgba(0,0,0,.3);
+  --line:rgba(0,0,0,.08);
+  --bg:#ffffff;
+  --grey:#f4f4f4;
+  --sans:'Akkurat','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --sans-light:'Akkurat Light','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--sans-light);color:var(--ink);background:var(--bg);line-height:1.6;font-size:12px;font-weight:400;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;background:none;border:none;cursor:pointer;color:inherit;}
+
+/* PROMO BAR */
+.promo-bar{background:#fff;text-align:center;padding:.7rem 1rem;font-size:.72rem;font-weight:700;letter-spacing:.02em;border-bottom:1px solid var(--line);}
+
+/* NAV */
+nav.site-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 2rem;height:70px;border-bottom:1px solid var(--line);}
+.nav-left{display:flex;gap:1.7rem;align-items:center;}
+.nav-left a{font-size:.75rem;font-weight:400;letter-spacing:normal;color:rgba(0,0,0,.7);display:flex;align-items:center;gap:.25rem;white-space:nowrap;}
+.nav-left a:hover,.nav-left a.active{color:var(--ink-solid);}
+.nav-logo{font-family:var(--sans);font-size:1.5rem;font-weight:700;letter-spacing:normal;text-align:center;text-transform:uppercase;}
+.nav-right{display:flex;justify-content:flex-end;align-items:center;gap:1.5rem;}
+.nav-right .curr{font-size:.85rem;font-weight:400;display:flex;align-items:center;gap:.3rem;cursor:pointer;}
+.nav-icon{width:19px;height:19px;display:inline-flex;cursor:pointer;position:relative;}
+.nav-icon svg{width:100%;height:100%;stroke:var(--ink);fill:none;stroke-width:1.4;}
+.bag-count{position:absolute;top:-7px;right:-9px;background:var(--ink);color:#fff;font-size:.55rem;font-weight:700;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.chev{flex-shrink:0;stroke:rgba(0,0,0,.45);position:relative;top:1px;}
+@media (max-width:900px){.nav-left{display:none;}}
+
+/* ABOUT SECTION */
+.about-section{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 178px);}
+.about-media{position:relative;overflow:hidden;background:linear-gradient(155deg,#2a2a2a 0%,#8b0019 55%,#c41230 100%);}
+.about-media::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px;}
+.about-content{padding:4rem clamp(2rem,5vw,5rem);display:flex;flex-direction:column;justify-content:center;}
+.about-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+.about-content h1{font-family:var(--sans);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:700;line-height:1.15;letter-spacing:normal;text-transform:uppercase;margin-bottom:1.6rem;max-width:14ch;}
+.about-content p{font-size:.9rem;color:var(--ink);line-height:1.9;margin-bottom:1.2rem;max-width:56ch;}
+.about-content p:last-child{margin-bottom:0;}
+
+@media (max-width:820px){
+  .about-section{grid-template-columns:1fr;}
+  .about-media{aspect-ratio:4/3;}
+  .about-content{padding:2.5rem 1.5rem;}
+  nav.site-nav{padding:0 1rem;}
+}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:3rem 2rem;background:var(--grey);}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;}
+.footer-brand{font-size:1.1rem;font-weight:700;letter-spacing:.03em;}
+.footer-links{display:flex;gap:2.5rem;flex-wrap:wrap;}
+.footer-col h4{font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem;}
+.footer-col a{display:block;font-size:.78rem;margin-bottom:.5rem;}
+.footer-legal{margin-top:2.5rem;font-size:.68rem;color:var(--muted);text-align:center;}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:300;padding:1rem;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:#fff;max-width:440px;width:100%;padding:2.4rem;position:relative;border-radius:2px;max-height:80vh;overflow-y:auto;}
+.modal-close{position:absolute;top:1rem;right:1.1rem;font-size:1.4rem;line-height:1;cursor:pointer;color:var(--muted);background:none;border:none;}
+.modal-close:hover{color:var(--ink-solid);}
+.modal-box h2{font-size:1rem;font-weight:700;text-transform:uppercase;margin-bottom:1rem;letter-spacing:normal;}
+.modal-box p{font-size:.8rem;color:var(--ink);line-height:1.8;margin-bottom:1rem;}
+.modal-box p:last-child{margin-bottom:0;}
+</style>
+</head>
+<body>
+
+<div class="promo-bar">FREE SHIPPING ON ALL ORDERS</div>
+
+<nav class="site-nav">
+  <div class="nav-left">
+    <a href="index.html">Shop</a>
+    <a href="about.html" class="active">Info</a>
+  </div>
+  <a href="index.html" class="nav-logo">CONSCIENT</a>
+  <div class="nav-right">
+    <span class="curr">USD <svg class="chev" viewBox="0 0 10 6" width="9" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="nav-icon" title="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+    <span class="nav-icon" title="Account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span>
+    <span class="nav-icon" title="Bag">
+      <svg viewBox="0 0 24 24"><path d="M6 8h12l-1 13H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span class="bag-count">0</span>
+    </span>
+  </div>
+</nav>
+
+<section class="about-section">
+  <div class="about-media"></div>
+  <div class="about-content">
+    <p class="about-eyebrow">The Brand</p>
+    <h1>Precision-cut sportswear for the unapologetic.</h1>
+    <p>Conscient started with a simple frustration: gymwear that looked the same as everything else on the rack. We took the cut and construction of vintage athletic wear and pushed the finish somewhere sharper — chrome-treated fabrics, saturated crimson, and silhouettes built to hold their shape.</p>
+    <p>Every piece is numbered and produced in limited runs, cut from heavyweight cotton and finished with the kind of detail that only shows up when you're paying attention. Conscient isn't loud. It's built for people who don't need it to be.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">CONSCIE<span style="color:#b3261e">NT</span></div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="index.html">Tops</a><a href="index.html">Bottoms</a><a href="index.html">Accessories</a>
+      </div>
+      <div class="footer-col">
+        <h4>Brand</h4>
+        <a href="about.html">About Conscient</a><a href="#" data-info="lookbook">Lookbook</a><a href="#" data-info="stockists">Stockists</a>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <a href="#" data-info="shipping">Shipping &amp; Returns</a><a href="#" data-info="sizing">Sizing</a><a href="#" data-info="contact">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-legal">© 2026 Conscient. All rights reserved.</div>
+</footer>
+
+<div class="modal-overlay" id="infoModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const INFO_CONTENT = {
+    lookbook:  { title:'Lookbook',        body:'<p>Our latest lookbook is coming soon. Check back shortly.</p>' },
+    stockists: { title:'Stockists',       body:'<p>Conscient is currently available online only. A stockist list will be published here soon.</p>' },
+    shipping:  { title:'Shipping & Returns', body:'<p>Free shipping on all orders.</p><p>Returns are accepted within 30 days of delivery, provided items are unworn with tags attached.</p>' },
+    sizing:    { title:'Sizing',          body:'<p>Our hoodies run true to size. If you’re between sizes, we recommend sizing down for a more fitted look.</p>' },
+    contact:   { title:'Contact',         body:'<p>Email us at hello@conscient.com and we’ll get back to you within one business day.</p>' }
+  };
+  const infoModal = document.getElementById('infoModal');
+  const modalBody = document.getElementById('modalBody');
+  function openInfo(key){
+    const c = INFO_CONTENT[key];
+    if(!c) return;
+    modalBody.innerHTML = `<h2>${c.title}</h2>${c.body}`;
+    infoModal.classList.add('open');
+  }
+  function closeInfo(){ infoModal.classList.remove('open'); }
+  document.querySelectorAll('[data-info]').forEach(a=>{
+    a.addEventListener('click', e=>{ e.preventDefault(); openInfo(a.dataset.info); });
+  });
+  document.getElementById('modalClose').addEventListener('click', closeInfo);
+  infoModal.addEventListener('click', e=>{ if(e.target===infoModal) closeInfo(); });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeInfo(); });
+})();
+</script>
+</body>
+</html>
